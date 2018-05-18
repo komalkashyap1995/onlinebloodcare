@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome User</title>
+	<link rel="shortcut icon" href="{% static 'images/icon.jpg' type='image/x-icon' %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/qc.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/navbarheight.css' %}" />
+
+  <script>
+$(document).ready(function() {
+  //carousel options
+  $('#quote-carousel').carousel({
+    pause: true, interval: 10000,
+  });
+});
+</script>
+
+</head>
+<body>
+ <div class=homepage>
+
+  <nav class="navbar navbar-default navbar-fixed-top" data-trigger="sticky" role="navigation">
+   <div class="container-fluid">
+    <div class="navbar-header">
+ 	 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+         <span class="sr-only">Toggle navigation</span>
+
+		<span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+<a class="navbar-brand" href="">
+ <img  class="logo img-responsive" src="/static/images/onlinebbbb.jpg" alt="logo" />
+
+ </a>
+   
+ </div>
+ 
+
+	<div class="collapse navbar-collapse" id="myNavbar">
+	<ul class="nav navbar-nav navbar-right">
+	 <li class="active">
+		<li><a href="{% url 'index' %}"> Home</a></li>
+	    <li><a href="{% url 'whydonateblood' %}"> Why donate blood?</a></li>
+		<li><a href="{% url 'whoneedsblood' %}"> Who needs blood?</a></li>
+		<li><a href="{% url 'tipsondonating' %}"> Tips on donating</a></li>
+		<li><a href="{% url 'bloodchain' %}"> Blood chain</a></li>
+		<li><a href="{% url 'about' %}"> About us</a></li>
+		<li><a href="{% url 'contactus' %}"> Contact us</a></li>
+		 
+		 {% if request.session.username %}
+            
+           <li><a href="#"> Editprofile</a></li>
+            <li><a href="{% url 'index' %}"> Logout</a></li>
+            
+            {% else %}
+
+           <li><a href="{% url 'signup' %}"> Register</a></li>
+            <li><a href="{% url 'signin' %}"> Log In</a></li>
+            
+            {% endif %}
+		<!--  {% if request.session.username %}
+            
+            <li><a href="#"> Editprofile</a></li>
+            <li><a href="{% url 'index' %}"> Logout</a></li>
+
+            {% else %}
+
+            <li><a href="{% url 'signup' %}"> Register</a></li>
+            <li><a href="{% url 'signin' %}"> Log In</a></li>
+            
+            {% endif %} -->
+
+	
+	</ul>
+   </div>
+  </div>
+</nav>
+</div>
+<br><br><br><br><br><br><br> 
+<div class="container">
+	<h2><b>Welcome, {{ request.session.username }}</b></h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+      
+<!-- Bottom Carousel Indicators -->
+<ol class="carousel-indicators">
+  <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+  <li data-target="#quote-carousel" data-slide-to="1"></li>
+  <li data-target="#quote-carousel" data-slide-to="2"></li>
+</ol>
+<div class="carousel-inner">
+<!-- Quote 1 -->
+<div class="item active">
+  <div class="row">
+    <div class="col-sm-12">
+    <p>&ldquo;"Blood is regenerated after few months but life is not, Please donate blood" &rdquo;</p>
+      <!-- <small><strong>Blood donation quotes</strong></small> -->
+    </div>
+  </div>
+</div>
+
+<!-- Quote 2 -->
+<div class="item">
+  <div class="row">
+    <div class="col-sm-12">
+    <p>&ldquo;"Thank you for partnering with us in our blood donation drive. Because of your help we will able to meet our goal of save one's life" &rdquo;</p>
+      <!-- <small><strong>Blood donation quotes</strong></small> -->
+    </div>
+  </div>
+</div>
+
+<!-- Quote 3 -->
+<div class="item">
+  <div class="row">
+    <div class="col-sm-12">
+    <p>&ldquo;"With your blood donation, you have done a great service to the nation. Thank you for participating." &rdquo;</p>
+      <!-- <small><strong>Blood donation quotes</strong></small> -->
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- <div class="container">
+	<h3>Your Details</h3>	
+	 <ul>
+   {% for contact in contacts %}
+     
+       <li>{{ contact.name }}
+       </li>
+        <li style="list-style-type: none;">{{ contact.Email }}
+       </li>
+       <li style="list-style-type: none;">{{ contact.Weight }}
+       </li>
+       
+   {% endfor %}
+   </ul>  -->
+ <div class="container">
+	<h3>Your Details</h3>	
+
+{% if rs %}
+ 	{% for k in rs %}
+ 	<table border="0px" width="300px">
+ 	<tr>
+ 	<td>Name:</td>
+ 	<td>{{k.name}}</td>
+ 	</tr>
+
+ 	<tr>
+ 	<td>Emailid:</td>
+ 	<td>{{k.Email}}</td>
+ 	</tr>
+
+ 	<tr>
+ 	<td>Blood_Group:</td>
+ 	<td>{{k.Blood_Group}}</td>
+ 	</tr>
+
+ 	<tr>
+ 	<td>Country</td>
+ 	<td>{{k.Country}}</td>
+ 	</tr>
+
+ 	<tr>
+ 	<td>State:</td>
+ 	<td>{{k.State}}</td>
+ 	</tr>
+ 	<tr>
+ 	<td>District:</td>
+ 	<td>{{k.District}}</td>
+ 	</tr>
+
+ 	<tr>
+ 	<td>Age:</td>
+ 	<td>{{k.Age}}</td>
+ 	</tr>
+
+ 	<tr>
+ 	<td>Weight:</td>
+ 	<td>{{k.Weight}}</td>
+ 	</tr>
+
+ 	<tr>
+ 	<td>Mobile:</td>
+ 	<td>{{k.Phone_Mobile}}</td>
+ 	</tr>
+
+ 	<tr>
+ 	<td>Alternative contact:</td>
+ 	<td>{{k.Phone_Office}}</td>
+ 	</tr>
+
+
+</table>
+{% endfor %}
+{% endif %}
+
+</div>
+	<!--  <div class="row">
+<div class="col-sm-10 col-md-10">
+	<!-<p>Username:{{ user }}</p> -->
+	<!-- <div class="col-md-6">
+          <table class="table">
+          <tr>
+            <th>S.No.</th>
+            <th>Name </th>
+            <th>Email</th>
+            <th>COntact No.</th>
+          </tr>
+          {% for detail in details %}
+          <tr>
+           
+            <td>{{detail.name}}</td>
+            <td>{{detail.Email}}</td>
+            <td>{{detail.Phone_Mobile}}</td>
+          </tr>
+          {% endfor %}   
+          </table>
+         </div> -->
+
+	<!-- {% for user in User %}
+          
+            <p>{{ forloop.counter }}</p>
+
+    <p>Name:{{ user.name }}</p>
+    <p>Email :{{ user.Email }}</p>
+    <p>Weight:{{ user.Weight }}</p>
+    <p>Age: {{ user.Age}}</p>
+    <p>Gender :{{ user.Gender }}</p>
+    <p>Phone_Mobile :{{ user.Phone_Mobile }}</p>
+    <p>Phone_Office: {{ user.Phone_Office}}</p>
+    <p>Country :{{ user.Country }}</p>
+    <p>Pincode :{{ user.Pincode }}</p>
+    <p>Blood_group :{{ user.Blood_Group }}</p>
+    {% endfor %} -->
+  
+  </div>
+ </div> 
+ </div>
+
+</body>
+</html>

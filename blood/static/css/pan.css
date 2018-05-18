@@ -1,0 +1,58 @@
+.pan h2{
+ 	font-weight: bold;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	letter-spacing: 2px;
+	font-size: 40px;
+ }
+
+ .pan h3{
+ 	font-weight: bold;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	letter-spacing: 2px;
+	font-size: 30px;
+ }
+  .pan h4{
+ 	font-weight: bold;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	letter-spacing: 2px;
+	font-size: 24px;
+ }
+
+ .pan p{
+ 	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:20px;
+	letter-spacing:1px;
+	line-height:25px;
+	text-align:justify;
+	font-style:normal;
+	word-spacing: 5px;
+
+}
+
+.pan{
+		background-image: url("/static/images/mirror.jpg");
+  		background-repeat: no-repeat;
+  		background-size: 100% 100%;
+	}
+.pan li{
+	line-height: 35px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:20px;
+	letter-spacing:1px;
+	text-align:justify;
+	font-style:normal;
+	word-spacing: 5px;
+}
+.pan p{
+	padding-left: 30px;
+	
+}
+.drop{
+	height:30px;
+	width:25px;
+}
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}

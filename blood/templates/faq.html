@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% block title %}FAQs {% endblock %}
+
+{% block content %}
+<br><br>
+
+{% block styles %}
+ <style>
+   .panel-title:hover{
+      color:red;
+   }
+   .faqimg{
+      background-image: url("/static/images/faqbg.jpg");
+      color: white;
+   }
+
+ </style> 
+{% endblock %}
+
+<div class="container-fluid faqimg">
+  <h2>Frequently asked questions</h2>
+  </div><br /><br />
+  <!--data-parent</strong> attribute makes sure that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.-->
+ <div class="container">
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+         <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" ><a data-toggle="collapse" data-parent="#accordion" href="#collapse1">  What is blood? How much blood does a person have?</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+	  <!-- <div id="collapse1" class="panel-collapse collapse in">it shows the panel body when we open the page-->
+        <div class="panel-body"> Blood is the red coloured fluid flowing continuously in our body's 
+                            circulatory system. About 1/12th of the body weight of a healthy individual is 
+                            blood. On an average there are about 5 - 6 litres of blood present.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+        <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" ><a data-toggle="collapse" data-parent="#accordion" href="#collapse2">  How much blood do you take?</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">  In India 350 ml blood is collected from a blood donor weighing not less than 45 
+                            kilograms. Donors weighing more than 55 kilogramsmay donate upto 450 ml of 
+                            blood. </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" ><a data-toggle="collapse" data-parent="#accordion" href="#collapse3">  Why is my finger pricked before donation?</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body"> To estimate “haemoglobin” content in blood. This is the component of the red cells which transport oxygen in the human body to all the organs and tissues. If the level is low, it is not wise to give blood.</div>
+      </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+        <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" >  <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">  What physical tests are performed before blood donation?</a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body"> 1. Weighing (not less than 45 kg)<br />
+2. Hb estimation (12.5gm/100ml by copper sulphate method) <br>
+3. Measurement of blood pressure (systolic 160/100 mmHg; diastolic 90/60 mmHg)<br>
+4. Checking heart beats (60 - 100 times per minute), condition of liver, lung and spleen<br>
+5. Body temperature (37<sup>o</sup>C)</div>
+      </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+        <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" >  <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">  Why blood is not collected from a person having a haemoglobin content of less than 12.5 gm/l00ml?</a>
+        </h4>
+      </div>
+      <div id="collapse5" class="panel-collapse collapse">
+        <div class="panel-body"> Haemoglobin in the blood carries oxygen from the respiratory organs (lungs ) to the rest of the body (i.e. the tissues) where it releases the oxygen to burn nutrients to provide energy to the organism, and collects the resultant carbon dioxide to bring it back to the respiratory organs to be dispensed from the organism. Hence blood with less Hb content than the prescribed (12.5gm/100ml) does not help the patient much in carrying oxygen to cells.</div>
+      </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+        <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" >  <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">  Who can donate blood? </a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body"> Any healthy person with clean habits between the age of 18 to 65 can donate blood.</div>
+      </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+        <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" >  <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">  How frequently I can donate blood?</a>
+        </h4>
+      </div>
+      <div id="collapse7" class="panel-collapse collapse">
+        <div class="panel-body">You can donate blood once in 3 months.</div>
+      </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+         <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" > <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">  Advantage of blood donation for a donor?</a>
+        </h4>
+      </div>
+      <div id="collapse8" class="panel-collapse collapse">
+        <div class="panel-body">New blood cells will be generated after donation</div>
+      </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" ><a data-toggle="collapse" data-parent="#accordion" href="#collapse9">  Is blood donation very painful?</a>
+        </h4>
+      </div>
+      <div id="collapse9" class="panel-collapse collapse">
+        <div class="panel-body"> No, Not more than a prick of an injection needle.</div>
+      </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+         <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" > <a data-toggle="collapse" data-parent="#accordion" href="#collapse10">  Does it take long time to donate blood?</a>
+        </h4>
+      </div>
+      <div id="collapse10" class="panel-collapse collapse">
+        <div class="panel-body"> It should take up not more than 20 minutes of time including time for rest and taking refreshment.</div>
+      </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+        <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" ><a data-toggle="collapse" data-parent="#accordion" href="#collapse11">  What are the infections for which blood is tested?</a>
+        </h4>
+      </div>
+      <div id="collapse11" class="panel-collapse collapse">
+        <div class="panel-body"> The Drugs and Cosmetics Act provides mandatory testing of blood for five major infections viz. HIV, Hepatitis C, Syphilis and Malaria. Every unit of blood is tested for all these Infections.</div>
+      </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" ><a data-toggle="collapse" data-parent="#accordion" href="#collapse12">  How can one blood donation save four lives ?</a>
+        </h4>
+      </div>
+      <div id="collapse12" class="panel-collapse collapse">
+        <div class="panel-body"> The blood you donate is split into four components Red Blood Cells, Platelets, 
+                            Plasma and Cryoprecipitate</div>
+      </div>
+    </div>
+	<div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <img src="/static/images/faqbd.jpg" alt="drop" style="height:30px; width:25px;" ><a data-toggle="collapse" data-parent="#accordion" href="#collapse13">  Why to use different types of bags for blood collection ?</a>
+        </h4>
+		
+      </div>
+      <div id="collapse13" class="panel-collapse collapse">
+        <div class="panel-body"> This depends upon what components we are going to prepare out of your donated 
+                            blood. This in turn, depends upon our stock position of various components and 
+                            also on requirements by patients. A "single bag" is used when the donated blood 
+                            is going to be used as "whole blood". We use a "double bag" to prepare one unit 
+                            of "Packed Cells" and one unit of "Fresh-Frozen Plasma" from a single donation. 
+                            "Triple bags" are used to make an additional unit of "Platelet Concentrate from 
+                            the same donation. "Penta bags" are used to make small aliquots for use in 
+                            babies.</div>
+      </div>
+    </div>
+	</div> 
+</div>
+    
+{% endblock %}

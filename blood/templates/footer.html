@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>footer</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" /> -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/navbarheight.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/foot.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/qc.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script>
+$(document).ready(function() {
+  //carousel options
+  $('#quote-carousel').carousel({
+    pause: true, interval: 10000,
+  });
+});
+</script>
+ </head>
+
+<body>
+<!--quote-->
+<h1><b>Get Inspiration And Donate Blood</b></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+      
+<!-- Bottom Carousel Indicators -->
+<ol class="carousel-indicators">
+  <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+  <li data-target="#quote-carousel" data-slide-to="1"></li>
+  <li data-target="#quote-carousel" data-slide-to="2"></li>
+  <li data-target="#quote-carousel" data-slide-to="3"></li>
+  <li data-target="#quote-carousel" data-slide-to="4"></li>
+</ol>
+        
+<!-- Carousel Slides / Quotes -->
+<div class="carousel-inner">
+
+<!-- Quote 1 -->
+<div class="item active">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;The Blood You Donate Gives Someone Another Chance At Life. One Day That Someone May Be A Closed Relative, A Friend, A Loved One - Or Even You" &rdquo;</p>
+      <small><strong>- Redcrossblood.org</strong></small>
+    </div>
+  </div>
+</div>
+
+<!-- Quote 2 -->
+<div class="item">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;"Do you feel you don't have much to offer? You have the most precious resource of all: the ability to save a life by donating blood! Help share this invaluable gift with someone in need." &rdquo;</p>
+      <small><strong>- CarterBloodCare</strong></small>
+    </div>
+  </div>
+</div>
+
+<!-- Quote 3 -->
+<div class="item">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;"Mother's tears cannot save her child's life but your blood can." &rdquo;</p>
+      <small><strong>Voluntary blood donation quotes</strong></small>
+    </div>
+  </div>
+</div>
+
+<!-- Quote 4 -->
+<div class="item">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;"Blood is regenerated after few months but life is not, Please donate blood" &rdquo;</p>
+      <small><strong>Blood donation quotes</strong></small>
+    </div>
+  </div>
+</div>
+
+<!-- Quote 5 -->
+<div class="item">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;"To give blood you need neither extra strength nor extra food, and you will save a life." &rdquo;</p>
+      <small><strong>Blood donation slogans</strong></small>
+    </div>
+  </div>
+</div>
+</div>
+        
+    </div>                          
+    </div>
+  </div>
+</div>
+
+<!--footer -->
+<div class="footer-section">
+    <div class="footer">
+	<div class="container">
+		    <div class="col-md-4 footer-one">
+		      <div class="foot-logo">
+		          <img src="/static/images/onlinebbbb.jpg" alt="logo" width="200px">
+		      </div> 
+		       
+		       <p>Helps the people by giving them all details of blood group availability or regarding the donors with the same blood group.   
+                </p>
+            <div class="social-icons"> 
+               <a href="https://www.facebook.com/"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+               <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+	            <a href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+	            <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+	        </div>
+		    </div>
+		    <div class="col-md-2 footer-two">
+		       <h5>Quick Links</h5>
+		          <ul>
+                    <li><a href="{% url 'about' %}"> About Us</a> </li>
+                    <li><a href="{% url 'registration' %}"> Become a donor</a> </li>
+                    <li><a href="{% url 'mostneededblood' %}"> Most needed blood</a> </li>
+                    <li><a href="{% url 'contactus' %}"> Contact Us</a> </li>
+                  </ul>
+                  
+		    </div>
+		    <div class="col-md-3 footer-three">
+		       <h5>Useful Links</h5>
+		          <ul>
+                    <li><a href="{% url 'blooddonationfacts' %}"> Blood donation facts</a> </li>
+                    <li><a href="{% url 'bloodimportance' %}"> Blood Importance</a> </li>
+                    <li><a href="{% url 'inspiringstories' %}"> Inspiring Stories</a> </li>
+                    <li><a href="{% url 'faq' %}"> FAQ</a> </li>
+                  </ul>
+                  
+		    </div>
+		    <div class="col-md-3 footer-four">
+		       <h5>Contact Us</h5>
+		         <!--<img src="http://iacademy.mikado-themes.com/wp-content/uploads/2017/05/footer-img-1.png">  -->
+				 <p><i class="fa fa-home mr-3"></i> Pathankot, PB 145001, India</p>
+                 <p><i class="fa fa-envelope mr-3"></i> onlinebloodcare@gmail.com</p>
+                 <p><i class="fa fa-phone mr-3"></i>8054605933</p>
+                 <p><i class="fa fa-phone mr-3"></i>7888425827 </p>
+                  
+		    </div>
+		    
+		<div class="clearfix"></div>
+	</div>
+</div>
+
+</div>
+<div class="footer-bottom">
+        <div class="container">
+					<div class="row">
+						<div class="col-sm-6 ">
+							<div class="copyright-text">
+								<p>CopyRight © 2018 Digital All Rights Reserved</p>
+							</div>
+						</div> <!-- End Col -->
+						<div class="col-sm-6  ">
+						    <div class="copyright-text pull-right">
+								<p> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'privacypolicy' %}">Privacy</a> |<a href="{% url 'termsofuse' %}">Terms of use</a> </p>
+							</div>					
+													
+						</div> <!-- End Col -->
+					</div>
+				</div>
+    </div>
+</body>
+</html>
+

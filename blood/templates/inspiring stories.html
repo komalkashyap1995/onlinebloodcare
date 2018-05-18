@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}Inspiring stories {% endblock %}
+
+{% block content %}
+<br><br>
+
+{% block styles %}
+  <style>
+  	.messages{
+  		list-style-type: none;
+  	}
+  </style>
+{% endblock %}
+
+<div class="container">
+<div class="panel panel-default pan">
+<div class="panel-body">
+<div class="row">
+			<div class="col-sm-10 col-md-10">
+				  <h2>Inspiring Stories</h2>								
+			</div>
+			
+		<div class="col-sm-8 col-md-8">                          
+			<br>
+
+    <p>Tell us your story opportunity to thank the selfless, anonymous, volunteer blood donors.</p>
+	     <p>Donors often tell us that hearing about the recipients they help is one of the biggest motivators to continue giving blood.</p>
+			<p>We would like to hear from anyone who has been helped by donated blood. Maybe it was you or a loved one who received a blood transfusion? It could have been during cancer treatment, surgery, child birth or after an accident, or you might require on-going transfusions to remain healthy and well.</p>
+				<p>This is your opportunity to thank the selfless, anonymous, volunteer blood donors that ensure there is always blood there for patients in need.
+				In 300 words or less please tell us your story of how donated blood helped you or a loved one.</p>
+		
+
+
+
+ <!-- {{ inspiringstories.Story }} -->
+
+
+
+<div class="row">
+			<div class="col-sm-12 col-md-12">
+			<h3>Your Story</h3></div>
+			<div class="col-md-8 col-sm-8">
+			<div class="form-group">
+				{% if messages %}
+				<ul class="messages ">
+				{% for message in messages %}
+				<li>
+				<div class="alert alert-success"> {{ message }}</div>
+				</li>
+				{% endfor %}
+				</ul>
+				{% endif %}
+			</div>	
+			</div>
+		</div>		
+<form name="story_form" action="../inspiringstories/"   method="POST" class="form-horizontal" />
+	
+	 {% csrf_token %}	
+	<div class="form-group">
+				<label class="col-md-2 control-label">First name:</label>
+				<div class="col-md-10" style="width: 30px;">
+					{{ form.First_name }}
+				</div>
+			</div><br>
+	<div class="form-group">
+				<label class="col-md-2 control-label">Last name:</label>
+				<div class="col-md-10">
+					{{ form.Last_name }}
+				</div>
+			</div><br>
+	<div class="form-group">
+				<label class="col-md-2 control-label">Email:</label>
+				<div class="col-md-10">
+					{{ form.Email }}
+				</div>
+			</div><br>
+	<div class="form-group">
+				<label class="col-md-2 control-label">Mobile:</label>
+				<div class="col-md-10">
+					{{ form.Mobile }}
+				</div>
+			</div><br>
+	<div class="form-group">
+				<label class="col-md-2 control-label">Story:</label>
+				<div class="col-md-10">
+					{{ form.Story }}
+				</div>
+			</div><br>
+	
+	<!--  {{ form.as_p }} -->
+
+<div class="button" style="padding-left: 120px;"><button type="submit" class="btn btn-primary">Submit</button></div>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

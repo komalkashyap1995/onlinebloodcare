@@ -1,0 +1,423 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Online Blood Care</title>
+  <link rel="shortcut icon" href="{% static 'images/icon.jpg' type='image/x-icon' %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  
+  
+  <!-- <link rel="stylesheet" href="/static/css/font-awesome.min.css" />  -->
+  <!--<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/bootstrap-3.3.7' %}"></script>-->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/navbarheight.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/foot.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/design.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/qc.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/pan.css' %}" /> 
+   <!-- <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"> -->
+  <!-- <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>-->
+<script>
+$(document).ready(function() {
+  //carousel options
+  $('#quote-carousel').carousel({
+    pause: true, interval: 10000,
+  });
+});
+</script>
+ <style>
+   .imgfaq{
+      opacity: 0.5;
+      height:400px;
+      width: 100%;
+    }
+    .ifaq{
+      position: relative;
+      text-align: center;
+      color: #1E90FF;
+    }
+   /* .top-left {
+    position: absolute;
+    font-size: 24px;
+    top: 44px;
+    left: 46px;
+    }*/
+    /*.bottom-right {
+    position: absolute;
+    bottom: 40px;
+    right: 16px;
+    }*/
+    .centered {
+    position: absolute;
+    top: 300px;
+    left: 635px;
+    transform: translate(-50%, -50%);
+    }
+    /*.btn-danger{
+      width: 130px;
+    }*/
+   
+   
+ </style>
+</head>
+<body >
+<div class=homepage>
+
+  <nav class="navbar navbar-default navbar-fixed-top" data-trigger="sticky" role="navigation">
+   <div class="container-fluid">
+    <div class="navbar-header">
+ 	 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+         <span class="sr-only">Toggle navigation</span>
+
+		<span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+<a class="navbar-brand" href="">
+ <img  class="logo img-responsive" src="/static/images/onlinebbbb.jpg" alt="logo" />
+
+ </a>
+   
+ </div>
+ 
+
+	<div class="collapse navbar-collapse" id="myNavbar">
+	<ul class="nav navbar-nav navbar-right">
+	 <li class="active">
+		<li><a href="{% url 'index' %}"> Home</a></li>
+	    <li><a href="{% url 'signup' %}"> Register</a></li>
+	    <li><a href="{% url 'whydonateblood' %}"> Why donate blood?</a></li>
+		 <li><a href="{% url 'whoneedsblood' %}"> Who needs blood?</a></li>
+		  <li><a href="{% url 'tipsondonating' %}"> Tips on donating</a></li>
+		   <li><a href="{% url 'bloodchain' %}"> Blood chain</a></li>
+		    <li><a href="{% url 'about' %}"> About us</a></li>
+				 <li><a href="{% url 'contactus' %}"> Contact us</a></li>
+         <li><a href="{% url 'signin' %}"> Login</a></li>
+          <!-- {% if not request.user.is_authenticated %} -->
+         <!-- <a href=""><span class="glyphicon glyphicon-log-in"></span> signup</a>
+         </li> -->
+			<!-- <li>
+      <a href="{% url 'signin' %}"> Login</a>
+      </li> -->
+      <!-- {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:8000/blood/profile/edit/">Edit Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Logout</a>
+            </li>
+            {% endif %} -->
+             
+		</ul>
+   </div>
+  </div>
+</nav>
+</div>
+<br><br><br><br><br><br>
+  <div class="container">
+  <h2 style="color: red; font-weight: bold; font-family:Georgia, "Times New Roman", Times, serif;">Find a Donor</h2>
+  </div>
+  <br>
+  <div class="container">
+
+  <form name="finddonorform" action="{% url 'search' %}"   method="POST" class="form-inline" style="padding-left: 30px;" />
+  {% csrf_token %}  
+   <div class="row">
+   
+   
+    <div class="col-sm-2 col-md-2">
+   <input type="text" style="height: 35px;" placeholder="Enter State" name="State" required>
+   </div>
+
+    <div class="col-sm-2 col-md-2">
+   <input type="text" style="height: 35px;" placeholder="Enter District" name="District" required>
+   </div>
+
+
+   <div class="col-sm-2 col-md-2">
+   <input type="text" style="height: 35px;" placeholder="Enter City" name="City" required>
+   </div>
+   
+    <div class="col-sm-2 col-md-2">
+   <input type="text" style="height: 35px;" placeholder="Enter Blood_Group" name="bg" required>
+   </div>
+
+
+    <div class="col-sm-2 col-md-2">
+    <button type="submit" class="btn btn-danger">Search</button>
+   </div>
+  </div>
+ 
+  </form>
+ </div> 
+ <br><br>
+<div class="container-fluid car">
+    
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+      <li data-target="#myCarousel" data-slide-to="5"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="/static/images/blood1.jpg" alt="image3" style="width:100%;">
+      </div>
+      <div class="item">
+        <img src="/static/images/BANNER1.jpg" alt="image1" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="/static/images/BANNER2.jpg" alt="image2" style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="/static/images/BANNER3.jpg" alt="image3" style="width:100%;">
+      </div>
+
+      <div class="item">
+        <img src="/static/images/bg.jpg" alt="image3" style="width:90%;">
+      </div>
+
+      <div class="item">
+        <img src="/static/images/pic.jpg" alt="image3" style="width:100%;">
+      </div>
+
+      
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <!--<span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>-->
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <!--<span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>-->
+    </a>
+  </div>
+</div>
+</div> <br> <br><hr>
+		<div class="container">
+		
+        <div class="welcome">
+		<!--<div class="col-md-12">-->
+		<h2> Welcome to Online Blood Care</h2><br>	
+		<blockquote>
+		<p class="text-justify">WE WELCOMES YOU to the ONLINE BLOOD CARE database in our WebSite. If you are a donor , we appreciate you signing up online as a Donor. If you need blood we are happy to serve you.</p>
+		<p class="text-justify">While we have taken all steps to obtain accurate and up-to-date information of potential blood donors, the Organisers and ICM Computers do not guarantee accuracy of the information contained herein or the suitability of the persons listed as any liability for direct or consequential damage to any person using this blood donor list including loss of life or damage due to infection of any nature arising out of blood transfusion from persons whose names have been listed in this website.</p>
+    <p><b>We request donors to update contact details regularly.</b></p>
+		</div>
+		</div>
+		</blockquote>
+		</div><br>
+		
+  <div class="container">
+  <div class="row">
+  
+      <div class="col-sm-6 col-md-6">
+      <div class="panel panel-default split">
+        <div class="panel-body">
+          <h3>How to Donate Blood?</h3> 
+          <div class="media">
+          <div class="media-left">
+          <img src="/static/images/how-to-donate.jpg" alt="How to donate blood?" class="media-object" style="padding-top:20px;"  width="150" height"550" /><!--</span>--></div>
+          <div class="media-body"><p>
+          You may please visit a Clinical Laboratory center and identify your blood group. The clinical test will cost you 50-60 INR only. The result shall be provided in 2 hours time. In case you wish to donate blood now itself, visit your nearest Blood Collection Center. Or alternatively you may register as donor in Online Blood Care. Recipients or Hospital authorities will contact you directly..<a href="Why donate blood.html">more</a></p>
+<!--</span>   --></div>
+</div>    
+      </div>
+      </div>
+      </div>
+    
+    <div class="col-sm-6 col-md-6">
+      <div class="panel panel-default split">
+  <div class="panel-body">
+          <h3>Donor Guideline</h3>
+         <div class="media">
+          <div class="media-left">
+          
+          <img src="/static/images/health-tip.jpg" alt="Health tips" class="media-object" style="padding-top:20px;"  width="150" height"550" /></div>
+          <div class="media-body">
+        <p> Each second of every day, someone needs blood. You can make the choice to donate by being a
+         volunteer donor to save one's life. It takes less than an hour to make a life-giving blood donation. To save life, both donor and recipient safety has to be considered. A brief medical check up of you pulse, body iron level, temperature and blood pressure are to be done. Donate blood if you are fit to donate..<a href="Tips on donating.html">more</a></p></div>     
+      </div>
+      </div>
+       </div>
+      </div>
+    </div>
+  </div>    
+<div class="container-fluid ifaq">
+<img src="/static/images/BANNER2.jpg" alt="image" class="imgfaq" >
+<!-- <div class="top-left">Give hope.<br>Give blood to people in need.<br>Give life to your community.</div> -->
+<div class="centered"><a href="{% url 'faq' %}" class="btn btn-danger btn-lg active" role="button">Know More</a></div>
+
+<!-- <div class="bottom-right"><a href="{% url 'faq' %}" class="btn btn-danger" role="button">Know More</a></div> -->
+</div>
+<h1><b>Get Inspiration And Donate Blood</b></h1>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+      
+<!-- Bottom Carousel Indicators -->
+<ol class="carousel-indicators">
+  <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+  <li data-target="#quote-carousel" data-slide-to="1"></li>
+  <li data-target="#quote-carousel" data-slide-to="2"></li>
+  <li data-target="#quote-carousel" data-slide-to="3"></li>
+  <li data-target="#quote-carousel" data-slide-to="4"></li>
+</ol>
+        
+<!-- Carousel Slides / Quotes -->
+<div class="carousel-inner">
+
+<!-- Quote 1 -->
+<div class="item active">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;The Blood You Donate Gives Someone Another Chance At Life. One Day That Someone May Be A Closed Relative, A Friend, A Loved One - Or Even You" &rdquo;</p>
+      <small><strong>- Redcrossblood.org</strong></small>
+    </div>
+  </div>
+</div>
+
+<!-- Quote 2 -->
+<div class="item">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;"Do you feel you don't have much to offer? You have the most precious resource of all: the ability to save a life by donating blood! Help share this invaluable gift with someone in need." &rdquo;</p>
+      <small><strong>- CarterBloodCare</strong></small>
+    </div>
+  </div>
+</div>
+
+<!-- Quote 3 -->
+<div class="item">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;"Tears of a mother cannot save her child's life but your blood can." &rdquo;</p>
+      <small><strong>Voluntary blood donation quotes</strong></small>
+    </div>
+  </div>
+</div>
+
+<!-- Quote 4 -->
+<div class="item">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;"Blood is regenerated after few months but life is not, Please donate blood" &rdquo;</p>
+      <small><strong>Blood donation quotes</strong></small>
+    </div>
+  </div>
+</div>
+
+<!-- Quote 5 -->
+<div class="item">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>&ldquo;"To give blood you need neither extra strength nor extra food, and you will save a life." &rdquo;</p>
+      <small><strong>Blood donation slogans</strong></small>
+    </div>
+  </div>
+</div>
+
+  
+</div>
+        
+
+      </div>                          
+    </div>
+  </div>
+</div>
+<br>
+
+    <!--Footer-->
+    <div class="footer-section">
+    <div class="footer">
+  <div class="container">
+        <div class="col-md-4 footer-one">
+          <div class="foot-logo">
+              <img src="/static/images/onlinebbbb.jpg" alt="logo" width="200px">
+          </div> 
+           
+           <p>Helps the people by giving them all details of blood group availability or regarding the donors with the same blood group.   
+                </p>
+            <div class="social-icons"> 
+               <a href="https://www.facebook.com/"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+               <a href="https://twitter.com/"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+              <a href="https://plus.google.com/"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+              <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2 footer-two">
+           <h5>Quick Links</h5>
+              <ul>
+                    <li><a href="{% url 'about' %}"> About Us</a> </li>
+                    <li><a href="{% url 'signup' %}"> Become a donor</a> </li>
+                    <li><a href="{% url 'mostneededblood' %}"> Most needed blood</a> </li>
+                    <li><a href="{% url 'contactus' %}"> Contact Us</a> </li>
+                  </ul>
+                  
+        </div>
+        <div class="col-md-3 footer-three">
+           <h5>Useful Links</h5>
+              <ul>
+                    <li><a href="{% url 'blooddonationfacts' %}"> Blood donation facts</a> </li>
+                    <li><a href="{% url 'bloodimportance' %}"> Blood Importance</a> </li>
+                    <li><a href="{% url 'inspiringstories' %}"> Inspiring Stories</a> </li>
+                    <li><a href="{% url 'faq' %}"> FAQ</a> </li>
+                  </ul>
+                  
+        </div>
+        <div class="col-md-3 footer-four">
+           <h5>Contact Us</h5>
+                <p><i class="fa fa-home mr-3"></i> Pathankot, PB 145001, India</p>
+                 <p><i class="fa fa-envelope mr-3"></i> onlinebloodcare@gmail.com</p>
+                 <p><i class="fa fa-phone mr-3"></i>8054605933</p>
+                 <p><i class="fa fa-phone mr-3"></i>7888425827 </p>
+        </div>
+        
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+</div>
+<div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 ">
+              <div class="copyright-text">
+                <p>CopyRight © 2018 Digital All Rights Reserved</p>
+              </div>
+            </div> <!-- End Col -->
+            <div class="col-sm-6  ">
+                <div class="copyright-text pull-right">
+                <p> <a href="{% url 'index' %}">Home</a> | <a href="{% url 'privacypolicy' %}">Privacy</a> |<a href="{% url 'termsofuse' %}">Terms of use</a> </p>
+              </div>          
+                          
+            </div> <!-- End Col -->
+          </div>
+        </div>
+    </div>
+      
+                      
+</body>
+</html>

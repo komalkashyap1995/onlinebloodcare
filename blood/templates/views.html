@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Products</title>
+</head>
+<body>
+   <ul>
+   {% for contact in contacts %}
+     
+       <li>{{ contact.Name }}
+       </li>
+        <li style="list-style-type: none;">{{ contact.Email }}
+       </li>
+       <li style="list-style-type: none;">{{ contact.message }}
+       </li>
+       
+   {% endfor %}
+   </ul> 
+
+  
+   
+
+</body>
+</html>

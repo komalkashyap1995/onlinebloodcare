@@ -1,0 +1,49 @@
+/* CSS Document */
+ .welcome p{
+ 	word-spacing:3px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:20px;
+	letter-spacing:1px;
+	line-height:32px;
+	text-align:justify;
+	font-style:normal;
+ }
+ 
+ .welcome h2{
+ 	font-size:40px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight:bold;
+ }
+/*.home_quote h3{
+	font-size:24px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight:800;
+} */
+
+ .split h3{
+ 	font-weight: bold;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	letter-spacing: 2px;
+	font-size: 30px;
+ }
+
+ .media-body p{
+ 	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:20px;
+	letter-spacing:1px;
+	line-height:25px;
+	text-align:justify;
+	font-style:normal;
+		
+ }
+/*
+ h1{
+ 	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:46px;
+	letter-spacing:1px;
+ }*/
+ 
+/* .car{
+ 	margin-top: 70px;
+ 	padding-top: 0px;
+ }*/

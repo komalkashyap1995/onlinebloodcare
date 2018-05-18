@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block title %}Find a donor {% endblock %}
+
+{% block content %}
+<br><br>
+
+<div class="container">
+  <h2>Find a Donor</h2>
+  </div><br>
+ <!--  <div class="container">
+  <form name="finddonorform" action="search.html"   method="POST" class="form-inline" />
+  
+    {% csrf_token %}
+   <div class="row">
+   <div class="col-sm-2 col-md-2">
+   <input type="text" class="form-control" placeholder="Your Country" name="Country" required>
+   </div>
+
+   <div class="col-sm-2 col-md-2">
+   <input type="text" class="form-control" placeholder="Your State" name="State" required>
+   </div>
+
+   <div class="col-sm-2 col-md-2">
+   <input type="text" class="form-control" placeholder="Your District" name="dist" required>
+   </div>
+
+   
+    <div class="col-sm-2 col-md-2">
+   <input type="text" class="form-control" placeholder="Blood_Group" name="bg" required>
+   </div>
+
+    <div class="col-sm-2 col-md-2">
+    <button type="submit" class="btn btn-primary">Search</button>
+   </div>
+  </div>
+ 
+  </form>
+ </div> 
+ -->
+ <div>
+  {% if messages %}
+    <ul class="messages">
+      {% for k in messages %}
+        <li style="color: red;">{{ k }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  <br>
+
+<div class="container"> 
+ {% if sr %}
+ 	<!-- <table boredr="1px" width="300px"> -->
+  <table class="table table-bordered">
+ <thead>
+     <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Blood Group</th>
+      <th>Mobile no.</th>
+      <th>Alternate no.</th>
+    </tr>
+	</thead>
+
+    {% for k in sr %}
+    <tbody>
+
+ 	<tr>
+ 	<td>{{k.name}}</td>
+ 	<td>{{k.Email}}</td>
+    <td>{{k.Blood_Group}}</td>
+    <td>{{k.Phone_Mobile}}</td>
+    <td>{{k.Phone_Office}}</td>
+ 	</tr>
+
+ <!-- 	<tr>
+ 	<td>Blood_Group</td>
+ 	<td>{{k.Blood_Group}}</td>
+ 	</tr>
+
+ 	<tr>
+ 	<td>Mobile no.</td>
+ 	<td>{{k.Phone_Mobile}}</td>
+ 	</tr>
+
+    <tr>
+  <td>Alternative no.</td>
+  <td>{{k.Phone_Office}}</td>
+  </tr> -->
+</tbody>
+{% endfor %}
+
+</table>
+
+{% endif %}
+</div>
+{% endblock %}

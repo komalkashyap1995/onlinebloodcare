@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% block title %}Register {% endblock %}
+
+{% block content %}
+<br><br>
+
+{% block styles %}
+  <style>
+  	.frm{
+  		background-image: url("/static/images/pic2.jpg");
+  		background-repeat: no-repeat;
+  		background-size: 100% 100%;
+  		/*height: 600px;*/
+  
+  </style> 
+  {% endblock %}
+
+<div class="container">
+ <img src="/static/images/register2.gif" alt="register image" style="width:100%; height:150px; margin-top:20px;" />
+ </div>
+ <div class="container frm" >
+ <!-- <img src="/static/images/pic1.jpg" alt="pic1"> -->
+<!-- <div class="frm"> -->
+<div class="row">
+	<div class="col-sm-12 col-md-12">
+		<h2> Donor Registration </h2>								
+	<br>
+	<h4> Already registered as a Donor! <a href="" class="btn btn-primary">Login </a></h4>
+	</div>
+</div>	
+<br>
+<p><strong>{{ Msg }}</strong></p>
+	<!-- <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" required> -->						
+	<form name="SignupForm" action="../signup/"   method="POST" class="form-horizontal" />
+	
+	 {% csrf_token %}	
+	
+	 <div class="col-sm-10 col-md-10">	
+		<div class="col-sm-6 col-md-6">			
+			<div class="form-group">
+			<label class="col-sm-5 control-label"> E-Mail Id <span style="color:#d42e2e;">*</span></label>
+			<div class="col-sm-7">
+			<input type="text" placeholder="Enter Email" name="Email" required>
+			<!-- {{ form.Email }} -->
+			</div>
+			</div>
+				
+				<div class="form-group">
+				<label for="name" class="col-sm-5 control-label">Name <span style="color:#d42e2e;">*</span></label>
+				<div class="col-sm-7">
+				<input type="text" placeholder="Enter Name" name="name" required>
+					<!-- {{ form.Name }} -->
+				</div>
+				</div>
+					
+					<div class="form-group">
+					<label class="col-sm-5 control-label">Password <span style="color:#d42e2e;">*</span> </label>
+					<div class="col-sm-7">
+					<input type="password" placeholder="Enter Password" name="Password" required>
+						<!-- {{ form.Password }} -->
+					</div>
+					</div>
+
+					<div class="form-group">
+					<label class="col-sm-5 control-label">Confirm Password <span style="color:#d42e2e;">*</span> </label>
+					<div class="col-sm-7">
+					<input type="password" placeholder="Enter Password" name="Confirm_Password" required>
+						<!-- {{ form.Confirm_Password }} -->
+					</div>
+					</div>
+																				
+					<div class="form-group">
+					<label class="col-sm-5 control-label">Age <span style="color:#d42e2e;">*</span> </label>
+					<div class="col-sm-7">
+						<input type="text" placeholder="Enter Age" name="Age" required>
+					<!-- {{ form.Age }} -->
+					</div>
+					</div>
+
+					<div class="form-group">
+					<label class="col-sm-5 control-label">Weight <span style="color:#d42e2e;">*</span> </label>
+					<div class="col-sm-7">
+					<input type="text" placeholder="Enter Weight" name="Weight" required>
+					 <!-- {{ form.Weight }} -->
+					</div>
+					</div>
+					
+					<div class="form-group">
+					<label class="col-sm-5 control-label radio-inline">Gender  <span style="color:#d42e2e;">*</span> </label>
+					<div class="col-sm-7">
+					<input type="text" placeholder="Enter Gender" name="Gender" required>
+					<!-- <input type="radio" name="Male">Male
+					<input type="radio" name="Female">Female -->
+					 <!-- {{ form.Gender }} -->
+					</div>
+					</div>
+
+					</div>							
+					<div class="col-sm-6 col-md-6">								
+						
+						<div class="form-group">
+						<label class="col-sm-5 control-label">Blood Group <span style="color:#d42e2e;">*</span></label>
+						<div class="col-sm-7">
+						<input type="text" placeholder="Enter Blood Group" name="Blood_Group" required>
+						<!-- {{ form.Blood_Group}} -->
+						</div>
+						</div>
+
+						<div class="form-group">
+						<label class="col-sm-5 control-label">Country <span style="color:#d42e2e;">*</span></label>
+						<div class="col-sm-7">
+						<input type="text" placeholder="Enter country" name="Country" required>
+							<!-- {{ form.Country }} -->
+						</div>
+						</div>	
+
+						<div class="form-group">
+						<label class="col-sm-5 control-label">State <span style="color:#d42e2e;">*</span> </label>
+						<div class="col-sm-7">
+						<input type="text" placeholder="Enter State" name="State" required>
+						<!-- {{ form.Pincode }} -->
+						</div>
+						</div>
+
+						<div class="form-group">
+						<label class="col-sm-5 control-label">District <span style="color:#d42e2e;">*</span></label>
+						<div class="col-sm-7">
+						<input type="text" placeholder="Enter District" name="District" required>
+							<!-- {{ form.Phone_Mobile }} -->
+						</div>
+						</div>
+
+						<div class="form-group">
+						<label class="col-sm-5 control-label">City <span style="color:#d42e2e;">*</span></label>
+						<div class="col-sm-7">
+						<input type="text" placeholder="Enter City" name="City" required>
+						<!-- {{ form.Phone_Office }} -->
+						</div>
+						</div>
+
+
+						<div class="form-group">
+						<label class="col-sm-5 control-label">Phone_Mobile  <span style="color:#d42e2e;">*</span></label>
+						<div class="col-sm-7">
+						<input type="text" placeholder="Enter Phone Number" name="Phone_Mobile" required>
+						<!-- {{ form.Phone_Office }} -->
+						</div>
+						</div>
+
+						<div class="form-group">
+						<label class="col-sm-5 control-label">Alternative Contact  <span style="color:#d42e2e;">*</span></label>
+						<div class="col-sm-7">
+						<input type="text" placeholder="Enter Phone Number" name="Phone_Office" required>
+						<!-- {{ form.Phone_Office }} -->
+						</div>
+						</div>
+
+						</div>
+						
+						<div class="col-md-12" align="center"><br>
+							<button type="submit" class="btn btn-primary to_be_register">Submit</button> &nbsp;&nbsp;
+							<button type="reset" class="btn btn-primary to_be_register">Reset</button>
+							</div>
+							</div>
+						
+	<!-- 
+		<button type="submit" class="btn btn-primary to_be_register">Submit</button> &nbsp;&nbsp;
+		<button type="reset" class="btn btn-primary to_be_register">Reset</button> -->
+	</form>
+	
+	</div>
+
+{% endblock %}

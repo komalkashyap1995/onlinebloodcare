@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us {% endblock %}
+
+{% block content %}
+<br><br>
+
+<div class="container">
+<div class="panel panel-default pan">
+<div class="panel-body">
+
+		
+		<div class="col-sm-10 col-md-10">
+					<h2>Contact Us</h2>                    	
+		</div>
+
+		  <div class="col-sm-8 col-md-8">
+			<h4>For Our Attention </h4>
+			   <p>Send your Compliments, Suggestions or specific Complaints to <a href="mailto:kashyapkomal909@gmail.com">kashyapkomal909@gmail.com</a></p>
+			  <h4>Administration Office</h4>
+			  <p>Renu Bala<br>
+					Ward No. 18, Mamoon <br>
+
+					Distt & Teh. Pathankot <br>
+					Pin-145001. <br>
+					Ph: 8054605933 <br>
+					 
+					Email:<a href="mailto:renubala427@gmail.com" >renubala427@gmail.com</a>
+				</p> 
+			</div>
+			<div class="col-sm-10 col-md-10">
+			<h3>Send Feedback</h3>
+			<br>
+			<div class="col-md-8 col-sm-8">
+			<div class="form-group">
+				{% if messages %}
+				<ul class="messages ">
+				{% for message in messages %}
+				<li>
+				<div class="alert alert-success"> {{ message }}</div>
+				</li>
+				{% endfor %}
+				</ul>
+				{% endif %}
+			</div>	
+			</div>
+			</div>
+			<form method="POST" action="../contactus/" name="contact_form" class="form-horizontal" />
+
+			{% csrf_token %} 
+
+			 <div class="form-group">
+				<label class="col-md-3 col-sm-3 control-label">Name:</label>
+				<div class="col-md-5 col-sm-5">
+					{{ form.Name }}
+				</div>
+			</div><br>
+			<div class="form-group">
+				<label class="col-md-3 col-sm-3 control-label">Email:</label>
+				<div class="col-md-5 col-sm-5">
+					{{ form.Email }}
+				</div>
+			</div><br>
+			<div class="form-group">
+				<label class="col-md-3 col-sm-3 control-label">Message:</label>
+				<div class="col-md-5 col-sm-5">
+					{{ form.Message }}
+				</div>
+			</div> <br>
+			<div class="col-md-4">				
+			<div class="button" style="padding-left: 170px;"><button type="submit"  class="btn btn-primary">Send</button></div>
+			</div>
+			</form>
+		</div>
+		</div>
+	</div>
+	
+
+
+{% endblock %}

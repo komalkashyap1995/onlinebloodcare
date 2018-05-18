@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}About us {% endblock %}
+
+{% block content %}
+<br><br>
+<div class="container">
+<div class="panel panel-default pan">
+<div class="panel-body">
+<div class="row">
+<div class="col-sm-10 col-md-10">
+<h2>About us</h2>								
+</div>
+
+<div class="col-sm-8 col-md-8">
+<br>
+<p>Online Blood Care is aimed at promoting the awareness of blood donation among the public. It is committed to stay ahead of all linguistic-rational-religious-political differences and shall be fully focusing its objectives in health care activities, with technology support from this website. The vision of this website is helping the needy people who needs blood, through internet and mobile in India.</p>
+<p>Online Blood care is equally committed to social causes, from helping save lives to saving the environment. OnlineBloodCare is an online, social and non-profit initiative to serve our community. We started this mission with one idea in mind - connecting people with heart with those who need life. The software is designed to handle the daily transactions of the blood bank and search the details when required. The main aim of this system is to develop an emergency application for a person who needs blood. No formal knowledge is needed for the user to use this website.
+In order to help people who are in need of blood, this Online Blood Care can be used effectively for getting details of available blood groups in the city and user can also get contact number of the blood donors who has the same blood group he needs.
+This Online Blood Care is an online website so it is easily available to everyone. When a person wants to donate blood he has to register to the system. Donor has to give information like blood group, contact details etc.  
+  </p>
+<p><b>"Give hope. Give blood to people in need. Give life to your community."</b> Join us in our march towards helping people who are in need of blood!</p><br /><br />
+
+<a href="{% url 'signup' %}"><center><button type="button" class="btn btn-danger btn-lg active">Start by register as a donor-></button></center></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

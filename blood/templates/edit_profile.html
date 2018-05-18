@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Online Blood Care</title>
+  <link rel="shortcut icon" href="{% static 'images/icon.jpg' type='image/x-icon' %}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'css/navbarheight.css' %}" />
+  <!--<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>-->
+
+  
+  
+</head>
+<body >
+<div class=homepage>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" data-trigger="sticky" role="navigation">
+   <div class="container-fluid">
+    <div class="navbar-header">
+   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+         <span class="sr-only">Toggle navigation</span>
+
+    <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+<a class="navbar-brand" href="">
+ <img  class="logo img-responsive" src="/static/images/logo d.png" alt="logo" />
+
+ </a>
+   
+ </div>
+ 
+
+  <div class="collapse navbar-collapse" id="myNavbar">
+  <ul class="nav navbar-nav navbar-right">
+   <li class="active">
+    <li><a href="{% url 'index' %}"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+      <li><a href="{% url 'registration' %}"><i class="fa fa-phone-square" aria-hidden="true"></i> Register</a></li>
+      <li><a href="{% url 'whydonateblood' %}"><i class="fa fa-question-circle" aria-hidden="true"></i> Why donate blood?</a></li>
+     <li><a href="{% url 'whoneedsblood' %}"><i class="fa fa-user" aria-hidden="true"></i> Who needs blood?</a></li>
+      <li><a href="{% url 'tipsondonating' %}"><i class="fa fa-list-alt" aria-hidden="true"></i> Tips on donating</a></li>
+       <li><a href="{% url 'bloodchain' %}"><i class="fa fa-tint" aria-hidden="true"></i> Blood chain</a></li>
+        <li><a href="{% url 'about' %}"><i class="fa fa-thumbs-up" aria-hidden="true"></i> About us</a></li>
+         <li><a href="{% url 'contactus' %}"><i class="fa fa-volume-control-phone" aria-hidden="true"></i> Contact us</a></li>
+         <li>
+          {% if not request.user.is_authenticated %}
+         <a href="{% url 'register' %}"><span class="glyphicon glyphicon-log-in"></span> signup</a>
+         </li>
+      <li>
+      <a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+      </li>
+      {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:8000/blood/profile/edit/">Edit Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% endif %}
+             
+      
+
+    </ul>
+   </div>
+  </div>
+</nav>
+</div>
+
+
+
+<!-- {% block content %} -->
+<div class="container">
+<h1>EDIT Profile</h1>
+
+<!--for display message-->
+    <div class="form-group col-md-6">
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+    <li class="alert alert-danger">{{ message }}
+    </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+
+
+
+<div>
+
+<div class="container">
+
+<div clas="col-md-5">
+  <form method="POST" action="" class="form-horizontal">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="submit">
+    </form>
+    </div>
+
+</div>
+</div>
+</div>
+<!-- {% endblock %} -->
+</body>
+</html>
