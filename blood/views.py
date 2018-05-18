@@ -194,7 +194,9 @@ def signup(request):
 			Phone_Mobile = request.POST['Phone_Mobile']
 			Phone_Office = request.POST['Phone_Office']
 			Country = request.POST['Country']
-			Pincode = request.POST['Pincode']
+			City = request.POST['City']
+			State = request.POST['State']
+			District = request.POST['District']
 			Blood_Group = request.POST['Blood_Group']
 			user = User(name=name)
 			user.Email = Email
@@ -206,7 +208,7 @@ def signup(request):
 			user.Phone_Mobile = Phone_Mobile
 			user.Phone_Office = Phone_Office
 			user.Country = Country
-			user.Pincode = Pincode
+			user.City = City
 			user.Blood_Group = Blood_Group
 		
 			user.save()
